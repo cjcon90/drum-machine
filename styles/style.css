@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.drum-keys {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+kbd {
+    display: none;
+}
+
+/* -------- Desktop Sizing and Layout ------- */
+
+@media only screen and (min-width: 1281px) {
+
+    #acoustic-body {
+        background-image: url(../images/acoustic-background.jpg);
+        background-position: center center no-repeat;
+        background-size: cover;
+    }
+    
+    #electro-body {
+        background-image: url(../images/electro-background.jpg);
+        background-position: center center no-repeat;
+        background-size: cover;
+    }
+    
+    .header {
+        height: 50vh;
+    }
+    
+    
+    .drum-keys {
+        max-width: 100%;
+        flex-flow: row wrap;
+    
+    }
+    
+    .drum-div {
+        display: flex;
+        align-items: center;
+        align-content: space-between;
+        flex-direction: column;
+        margin: 50px;
+        height: 125px;
+        width: 125px;
+        border: solid white;
+    }
+    
+    .drum-key {
+        color: white;
+        text-align: center;
+        width: 100%;
+        font-size: 1.5em;
+        pointer-events: none;
+    }
+
+    kbd {
+        display: flex;
+        color: white;
+        font-size: 3em;
+        margin: 10px;
+    }
+
+
+
+}
+
+
+/* -------- Landscape Tablet Sizing and Layout ------- */
+
+@media only screen and (min-height: 768px) and (min-width: 1024px) {
+
+    #acoustic-body {
+        background-image: url(../images/acoustic-background.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 150% 150%;
+    }
+    
+    #electro-body {
+        background-image: url(../images/electro-background.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+
+    .header {
+        height: 35vh;
+        margin-bottom: 50px;
+    }
+    
+    .drum-keys {
+        max-width: 100%;
+        height: 400px;
+        flex-flow: column wrap;
+    
+    }
+    
+    .drum-div {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        height: 125px;
+        width: 125px;
+        border: solid white;
+    }
+    
+    .drum-key {
+        color: white;
+        text-align: center;
+        width: 100%;
+        font-size: 1.5em;
+        pointer-events: none;
+    }
+
+
+
+}
+
+/* -------- Portrait Tablet Sizing and Layout ------- */
+
+@media only screen and (max-width: 800px) {
+
+    body {
+        background-color: black;
+    }
+    
+    .header {
+        height: 57vh;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        margin-bottom: 50px;
+    }
+    
+    #acoustic-header {
+        background-image: url(../images/acoustic-background.jpg);
+    }
+    
+    #electro-header {
+        background-image: url(../images/electro-background.jpg);
+    }
+    
+    .drum-keys {
+        max-width: 100%;
+        height: 400px;
+        flex-flow: column wrap;
+    
+    }
+    
+    .drum-div {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        height: 125px;
+        width: 125px;
+        border: solid white;
+    }
+    
+    .drum-key {
+        color: white;
+        text-align: center;
+        width: 100%;
+        font-size: 1.5em;
+        pointer-events: none;
+    }
+
+}
+
+
+
+/* -------- Mobile Sizing and Layout ------- */
+
+@media only screen and (max-width: 425px) {
+
+body {
+    background-color: black;
+}
+
+.header {
+    height: 57vh;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    margin-bottom: 50px;
+}
+
+#acoustic-header {
+    background-image: url(../images/acoustic-background.jpg);
+}
+
+#electro-header {
+    background-image: url(../images/electro-background.jpg);
+}
+
+.drum-keys {
+    max-width: 100%;
+    height: 230px;
+    flex-flow: column wrap;
+
+}
+
+.drum-div {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    height: 70px;
+    width: 70px;
+    border: solid white;
+}
+
+.drum-key {
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: .9em;
+    pointer-events: none;
+}
+
+}
+
+
+
+
+
+
+
+
