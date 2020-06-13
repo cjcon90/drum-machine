@@ -48,7 +48,6 @@ h1 {
     font-size: 2.5em;
     text-align: center;
     padding: 10px 30px 10px 30px;
-    width: 100%;
 }
 
 #acoustic-link {
@@ -208,7 +207,7 @@ kbd {
 
 /* -------- Landscape Tablet Sizing and Layout ------- */
 
-@media only screen and (min-height: 768px) and (min-width: 1024px) and (max-width: 1280px) {
+@media only screen and (max-width: 1280px) and (orientation: Landscape) {
 
     #acoustic-body {
         background-image: url(../images/acoustic-background.jpg);
@@ -246,8 +245,6 @@ kbd {
     .drum-key {
         font-size: 1.5em;
     }
-
-
 
 }
 
@@ -300,6 +297,11 @@ kbd {
 
 @media only screen and (max-width: 425px) {
 
+h1 {
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
 body {
     background-color: black;
 }
@@ -338,11 +340,3 @@ body {
 }
 
 }
-
-
-
-
-
-
-
-
