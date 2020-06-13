@@ -1,8 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sriracha&family=Ubuntu+Mono:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
+/* -------- Drum Select Page Styling ------- */
+
+
+#body-select {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#acoustic-select {
+    background-image: url(../images/acoustic-background.jpg);
+    background-position: center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+#electro-select {
+    background-image: url(../images/electro-background.jpg);
+    background-position: center center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.drum-link {
+    text-decoration: none;
+}
+
+h1 {
+    margin-top: 40%;
+    font-size: 3em;
+    text-align: center;
+    padding: 15px 30px 15px 30pxa;
+}
+
+#acoustic-link {
+    color: rgb(197, 194, 194);
+    background-color: rgba(0, 0, 0, 0.719);
+    border: solid 2px rgb(163, 80, 42);
+    font-family: 'Sriracha', cursive;
+}
+
+#electro-link {
+    color: rgb(197, 194, 194);
+    background-color: rgba(58, 0, 105, 0.719);
+    border: solid 2px rgb(0, 185, 56);
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+
+
+/* -------- Drum Machine Page Styling ------- */
+
 
 .drum-keys {
     position: relative;
@@ -13,7 +78,71 @@
 
 kbd {
     display: none;
+    pointer-events: none;
 }
+
+.drum-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.2s;
+}
+
+.playing {
+    transform: scale(1.1);
+}
+
+.drum-key {
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+.electro-div {
+    background-color: rgba(61, 5, 83, 0.808);
+    border: solid 3px rgba(52, 224, 0, 0.747);
+    color: rgb(52, 224, 0);
+    border-radius: 20px;
+}
+
+.electro-div.playing {
+    box-shadow: 0 0 30px yellow
+}
+
+.acoustic-drum {
+    background-color: rgb(212, 212, 201);
+    border: ridge 5px rgb(163, 80, 42);
+    border-radius: 50%;
+}
+
+.acoustic-drum.playing {
+    transform: scale(1.1);
+    background-color: rgb(185, 185, 176);
+    box-shadow: rgb(190, 190, 182);
+}
+
+.acoustic-cymbal {
+    background-color: rgb(189, 140, 50);
+    border: outset 5px rgb(189, 140, 50);
+    border-radius: 50%;
+}
+
+.acoustic-cymbal.playing {
+    border: inset 5px rgb(189, 140, 50);
+
+}
+
+.drum-key {
+    font-family: 'Ubuntu Mono', monospace;
+    line-height: 1em;
+}
+
+.acoustic-key {
+    font-family: 'Sriracha', cursive;
+}
+
+
 
 /* -------- Desktop Sizing and Layout ------- */
 
@@ -32,50 +161,53 @@ kbd {
     }
     
     .header {
-        height: 50vh;
+        height: 40vh
     }
-    
     
     .drum-keys {
         max-width: 100%;
         flex-flow: row wrap;
-    
     }
     
     .drum-div {
-        display: flex;
-        align-items: center;
-        align-content: space-between;
-        flex-direction: column;
-        margin: 50px;
+        margin: 40px;
         height: 125px;
         width: 125px;
-        border: solid white;
     }
     
     .drum-key {
-        color: white;
-        text-align: center;
-        width: 100%;
-        font-size: 1.5em;
-        pointer-events: none;
+        font-size: 1.7em;
+        font-family: 'Ubuntu Mono', monospace;
     }
 
     kbd {
         display: flex;
-        color: white;
-        font-size: 3em;
-        margin: 10px;
+        font-size: 3.5em;
+        margin-bottom: 10px;
+        color: rgb(255, 255, 255);
+        font-family: 'Ubuntu Mono', monospace;
     }
 
+    .acoustic-kbd {
+        color: black;
+        margin: -15px 0 5px 0;
+        font-size: 2.5em;
+        font-family: 'Sriracha', cursive;
+        line-height: 1em;
+    }
 
+    .acoustic-key {
+        font-family: 'Sriracha', cursive;
+        font-size: 1.5em;
+        line-height: 1em;
+    }
 
 }
 
 
 /* -------- Landscape Tablet Sizing and Layout ------- */
 
-@media only screen and (min-height: 768px) and (min-width: 1024px) {
+@media only screen and (min-height: 768px) and (min-width: 1024px) and (max-width: 1280px) {
 
     #acoustic-body {
         background-image: url(../images/acoustic-background.jpg);
@@ -105,20 +237,13 @@ kbd {
     }
     
     .drum-div {
-        display: flex;
-        align-items: center;
         margin: 20px;
         height: 125px;
         width: 125px;
-        border: solid white;
     }
     
     .drum-key {
-        color: white;
-        text-align: center;
-        width: 100%;
         font-size: 1.5em;
-        pointer-events: none;
     }
 
 
@@ -157,20 +282,13 @@ kbd {
     }
     
     .drum-div {
-        display: flex;
-        align-items: center;
         margin: 20px;
         height: 125px;
         width: 125px;
-        border: solid white;
     }
     
     .drum-key {
-        color: white;
-        text-align: center;
-        width: 100%;
-        font-size: 1.5em;
-        pointer-events: none;
+        font-size: 2em;
     }
 
 }
@@ -209,20 +327,13 @@ body {
 }
 
 .drum-div {
-    display: flex;
-    align-items: center;
     margin: 5px;
     height: 70px;
     width: 70px;
-    border: solid white;
 }
 
 .drum-key {
-    color: white;
-    text-align: center;
-    width: 100%;
-    font-size: .9em;
-    pointer-events: none;
+    font-size: 1em;
 }
 
 }

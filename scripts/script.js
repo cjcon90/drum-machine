@@ -21,20 +21,18 @@ const electroPing = document.querySelector('#electro-ping');
 const electroLaser = document.querySelector('#electro-laser');
 
 
-//play sound function
-let playSound = function(e) {
-const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-console.log(e.keyCode)
+//Keyboard Sound Function
+window.addEventListener('keydown', function(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.drum-div[data-key="${e.keyCode}"]`);
     if(!audio) return;
     this.console.log(audio);
     audio.currentTime = 0;
     audio.play();
-}
+    key.classList.add('playing')
+})
 
-// keyboard click functionality
-window.addEventListener('keydown', playSound)
-
-
+// Click Drum Function
 let drumDivs = document.querySelectorAll('div.drum-div');
 drumDivs.forEach((drum) => {
     drum.addEventListener('click', (e) => {
@@ -43,7 +41,15 @@ drumDivs.forEach((drum) => {
         this.console.log(audio);
         audio.currentTime = 0;
         audio.play();
+        drum.classList.add('playing')
     });
   });
 
+  
+  function removeTransition(e) {
+      if(e.propertyName !== 'transform') return
+      this.classList.remove('playing')
+  }
 
+
+  drumDivs.forEach(drum => drum.addEventListener('transitionend', removeTransition));
